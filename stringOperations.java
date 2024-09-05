@@ -295,20 +295,20 @@ public class stringOperations {
     }
 
     public static void maxRepeated(String string) {
-        int[] charFrequency = new int[256]; 
+        int[] characterFrequency = new int[256]; 
         
         for (int i = 0; i < string.length(); i++) {
-            charFrequency[string.charAt(i)]++;
+            characterFrequency[string.charAt(i)]++;
         }
         
         int maxFrequency = 0;
         boolean hasDuplicates = false; //for checking Multiple Characters With Max Frequency
         
         for (int i = 0; i < 256; i++) {
-            if (charFrequency[i] > maxFrequency) {
-                maxFrequency = charFrequency[i];
+            if (characterFrequency[i] > maxFrequency) {
+                maxFrequency = characterFrequency[i];
                 hasDuplicates = false;
-            } else if (charFrequency[i] == maxFrequency) {
+            } else if (characterFrequency[i] == maxFrequency) {
                 hasDuplicates = true;
             }
         }
@@ -316,14 +316,14 @@ public class stringOperations {
         if (hasDuplicates) {
             System.out.println("Characters with max frequency " + maxFrequency + ": ");
             for (int i = 0; i < 256; i++) {
-                if (charFrequency[i] == maxFrequency) {
+                if (characterFrequency[i] == maxFrequency) {
                     System.out.print((char) i + " ");
                 }
             }
         } else {
             System.out.println("Character with max frequency " + maxFrequency + ": ");
             for (int i = 0; i < 256; i++) {
-                if (charFrequency[i] == maxFrequency) {
+                if (characterFrequency[i] == maxFrequency) {
                     System.out.print((char) i);
                 }
             }
